@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -47,20 +46,20 @@ const Profile = () => {
           </div>
         </div>
         
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">{user.name}</h1>
-        <p className="text-gray-600 text-lg mb-4 max-w-md mx-auto">{user.bio}</p>
+        <h1 className="text-3xl font-bold mb-2 text-black dark:text-white">{user.name}</h1>
+        <p className="text-lg mb-4 max-w-md mx-auto text-black dark:text-white">{user.bio}</p>
         
-        <div className="flex items-center justify-center space-x-8 text-sm text-gray-600">
+        <div className="flex items-center justify-center space-x-8 text-sm text-black dark:text-white">
           <div className="text-center">
-            <div className="font-bold text-2xl text-gray-900">{userPins.length}</div>
+            <div className="font-bold text-2xl text-black dark:text-white">{userPins.length}</div>
             <div>Pins</div>
           </div>
           <div className="text-center">
-            <div className="font-bold text-2xl text-gray-900">{savedPins.length}</div>
+            <div className="font-bold text-2xl text-black dark:text-white">{savedPins.length}</div>
             <div>Saved</div>
           </div>
           <div className="text-center">
-            <div className="font-bold text-2xl text-gray-900">{user.followers}</div>
+            <div className="font-bold text-2xl text-black dark:text-white">{user.followers}</div>
             <div>Followers</div>
           </div>
         </div>
@@ -103,7 +102,7 @@ const Profile = () => {
               className="text-center py-16"
             >
               <div className="text-gray-400 text-6xl mb-4">📌</div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">No pins yet</h3>
+              <h3 className="text-lg font-medium mb-2 text-black dark:text-white">No pins yet</h3>
               <p className="text-gray-600">
                 {isOwnProfile ? "Start creating your first pin!" : "This user hasn't created any pins yet."}
               </p>
@@ -138,7 +137,7 @@ const Profile = () => {
               className="text-center py-16"
             >
               <div className="text-gray-400 text-6xl mb-4">💾</div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">No saved pins</h3>
+              <h3 className="text-lg font-medium mb-2 text-black dark:text-white">No saved pins</h3>
               <p className="text-gray-600">
                 {isOwnProfile ? "Save pins you love to see them here!" : "This user hasn't saved any pins yet."}
               </p>

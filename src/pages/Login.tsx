@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { setCurrentUser } from '../store/slices/userSlice';
@@ -53,12 +52,12 @@ const Login = () => {
                       className="w-12 h-12 rounded-full object-cover"
                     />
                     <div className="flex-1">
-                      <h3 className="font-semibold text-gray-900">{user.name}</h3>
-                      <p className="text-sm text-gray-600">{user.email}</p>
+                      <h3 className="font-semibold text-black dark:text-white">{user.name}</h3>
+                      <p className="text-sm text-black dark:text-white">{user.email}</p>
                       <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium mt-1 ${
                         user.role === 'admin' 
-                          ? 'bg-rose-100 text-rose-800' 
-                          : 'bg-gray-100 text-gray-800'
+                          ? 'bg-rose-100 text-rose-800 dark:text-white dark:bg-rose-700' 
+                          : 'bg-gray-100 text-gray-800 dark:text-white dark:bg-gray-700'
                       }`}>
                         {user.role}
                       </span>

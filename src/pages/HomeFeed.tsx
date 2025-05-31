@@ -1,4 +1,3 @@
-
 import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useAppSelector } from '../store/hooks';
@@ -36,7 +35,7 @@ const HomeFeed = () => {
         transition={{ duration: 0.6 }}
         className="mb-8"
       >
-        <h1 className="text-3xl font-bold text-gray-900 mb-6">Discover Inspiration</h1>
+        <h1 className="text-3xl font-bold mb-6 text-black dark:text-white">Discover Inspiration</h1>
         <SearchBar />
         <TagFilterBar tags={allTags} />
       </motion.div>

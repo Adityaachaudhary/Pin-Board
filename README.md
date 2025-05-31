@@ -83,7 +83,6 @@ src/
 1. **Clone the repository**
    ```bash
    git clone <your-repository-url>
-   cd pinboard-app
    ```
 
 2. **Install dependencies**
@@ -216,11 +215,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - **Framer Motion** for smooth animations
 - **Lucide** for the icon set
 
-## 📞 Support
-
-If you encounter any issues or have questions, please open an issue on GitHub or contact the development team.
 
 ---
 
-Built with ❤️ using React and TypeScript
+Built using React and TypeScript
 ```

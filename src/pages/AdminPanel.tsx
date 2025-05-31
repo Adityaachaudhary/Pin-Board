@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useAppSelector, useAppDispatch } from '../store/hooks';
@@ -61,7 +60,7 @@ const AdminPanel = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-black dark:text-white">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -69,8 +68,8 @@ const AdminPanel = () => {
       >
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Admin Panel</h1>
-            <p className="text-gray-600 mt-2">Manage pins and content</p>
+            <h1 className="text-3xl font-bold dark:text-white text-black">Admin Panel</h1>
+            <p className="mt-2 dark:text-white text-black">Manage pins and content</p>
           </div>
           <Button
             onClick={() => setIsModalOpen(true)}
@@ -84,7 +83,7 @@ const AdminPanel = () => {
         <div className="grid gap-6">
           <Card>
             <CardHeader>
-              <CardTitle>Statistics</CardTitle>
+              <CardTitle className="dark:text-white text-black">Statistics</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -114,7 +113,7 @@ const AdminPanel = () => {
 
           <Card>
             <CardHeader>
-              <CardTitle>All Pins</CardTitle>
+              <CardTitle className="dark:text-white text-black">All Pins</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
@@ -134,9 +133,9 @@ const AdminPanel = () => {
                         className="w-16 h-16 object-cover rounded-lg"
                       />
                       <div className="flex-1">
-                        <h3 className="font-semibold text-gray-900">{pin.title}</h3>
-                        <p className="text-sm text-gray-600 line-clamp-2">{pin.description}</p>
-                        <div className="flex items-center space-x-4 mt-2 text-xs text-gray-500">
+                        <h3 className="font-semibold dark:text-white text-black">{pin.title}</h3>
+                        <p className="text-sm line-clamp-2 dark:text-white text-black">{pin.description}</p>
+                        <div className="flex items-center space-x-4 mt-2 text-xs dark:text-white text-black">
                           <span>By {author?.name}</span>
                           <span>❤️ {pin.likes}</span>
                           <span>📌 {pin.savedBy.length} saves</span>
