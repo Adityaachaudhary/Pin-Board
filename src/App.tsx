@@ -6,6 +6,7 @@ import { store } from './store/store';
 import { useAppDispatch, useAppSelector } from './store/hooks';
 import { setUsers, setCurrentUser } from './store/slices/userSlice';
 import { setPins } from './store/slices/pinSlice';
+import { ThemeProvider } from './contexts/ThemeContext';
 import Login from './pages/Login';
 import HomeFeed from './pages/HomeFeed';
 import PinDetail from './pages/PinDetail';
@@ -66,11 +67,13 @@ function AppContent() {
 
 const App = () => (
   <Provider store={store}>
-    <BrowserRouter>
-      <Toaster />
-      <Sonner />
-      <AppContent />
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
+        <Toaster />
+        <Sonner />
+        <AppContent />
+      </BrowserRouter>
+    </ThemeProvider>
   </Provider>
 );
 

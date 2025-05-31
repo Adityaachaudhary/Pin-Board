@@ -1,73 +1,226 @@
-# Welcome to your Lovable project
 
-## Project info
+# Pinboard - Pinterest-Inspired Image Sharing App
 
-**URL**: https://lovable.dev/projects/003de77d-26d0-442c-84ab-82c69de798dc
+A full-stack, frontend-focused image-sharing and bookmarking application inspired by Pinterest. Built with React, TypeScript, Redux Toolkit, and Tailwind CSS, featuring a simulated backend using localStorage.
 
-## How can I edit this code?
+## 🌟 Features
 
-There are several ways of editing your application.
+### 🔐 Authentication (Simulated)
+- User selection from predefined profiles
+- Role-based access control (admin/user)
+- Persistent login state
 
-**Use Lovable**
+### 🎨 User Interface
+- **Responsive Design**: Pinterest-style masonry grid layout
+- **Dark/Light Theme**: Toggle between themes with smooth transitions
+- **Smooth Animations**: Powered by Framer Motion
+- **Interactive Elements**: Animated like/save buttons and hover effects
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/003de77d-26d0-442c-84ab-82c69de798dc) and start prompting.
+### 📌 Core Functionality
+- **Pin Management**: Create, edit, delete, and view pins
+- **Social Features**: Like and save pins
+- **Search & Filter**: Search by title/tags and filter by tag categories
+- **User Profiles**: View user profiles with their pins and saved content
+- **Admin Panel**: Administrative interface for pin management
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠️ Tech Stack
 
-**Use your preferred IDE**
+- **Frontend**: React 18 + TypeScript
+- **State Management**: Redux Toolkit
+- **Routing**: React Router v6
+- **Styling**: Tailwind CSS + shadcn/ui components
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Build Tool**: Vite
+- **Data Persistence**: localStorage (simulating backend)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 📁 Project Structure
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/           # Reusable UI components
+│   ├── ui/              # shadcn/ui components
+│   ├── Layout.tsx       # Main layout wrapper
+│   ├── PinCard.tsx      # Pin display component
+│   ├── LikeButton.tsx   # Animated like button
+│   ├── SaveButton.tsx   # Animated save button
+│   ├── SearchBar.tsx    # Search functionality
+│   ├── TagFilterBar.tsx # Tag filtering component
+│   ├── PinFormModal.tsx # Pin creation/editing modal
+│   └── ThemeToggle.tsx  # Dark/light theme toggle
+├── contexts/            # React contexts
+│   └── ThemeContext.tsx # Theme management context
+├── data/               # Initial data
+│   └── initialData.json # User and pin seed data
+├── hooks/              # Custom React hooks
+├── pages/              # Page components
+│   ├── Login.tsx       # User selection page
+│   ├── HomeFeed.tsx    # Main feed with all pins
+│   ├── PinDetail.tsx   # Detailed pin view
+│   ├── Profile.tsx     # User profile page
+│   └── AdminPanel.tsx  # Admin management interface
+├── store/              # Redux store configuration
+│   ├── slices/         # Redux slices
+│   │   ├── userSlice.ts    # User state management
+│   │   ├── pinSlice.ts     # Pin state management
+│   │   └── filterSlice.ts  # Filter state management
+│   ├── store.ts        # Store configuration
+│   └── hooks.ts        # Typed Redux hooks
+├── lib/                # Utility functions
+├── App.tsx             # Main app component
+└── main.tsx            # Application entry point
 ```
 
-**Edit a file directly in GitHub**
+## 🚀 Getting Started
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Prerequisites
 
-**Use GitHub Codespaces**
+- Node.js (v18 or higher)
+- npm or yarn package manager
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Installation
 
-## What technologies are used for this project?
+1. **Clone the repository**
+   ```bash
+   git clone <your-repository-url>
+   cd pinboard-app
+   ```
 
-This project is built with:
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+3. **Start the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-## How can I deploy this project?
+4. **Open your browser**
+   Navigate to `http://localhost:5173` to view the application.
 
-Simply open [Lovable](https://lovable.dev/projects/003de77d-26d0-442c-84ab-82c69de798dc) and click on Share -> Publish.
+### Build for Production
 
-## Can I connect a custom domain to my Lovable project?
+```bash
+npm run build
+# or
+yarn build
+```
 
-Yes, you can!
+The built files will be in the `dist` directory.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🎮 Usage
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Getting Started
+1. **Login**: Select a user profile from the login screen
+2. **Explore**: Browse pins on the home feed
+3. **Interact**: Like and save pins you enjoy
+4. **Search**: Use the search bar to find specific content
+5. **Filter**: Click on tag chips to filter by categories
+
+### User Roles
+
+#### Regular User
+- View and interact with pins (like/save)
+- Access personal profile with uploaded and saved pins
+- Search and filter functionality
+
+#### Admin User
+- All regular user capabilities
+- Create, edit, and delete any pins
+- Access to admin panel for bulk management
+- Manage all user content
+
+### Theme Toggle
+Click the sun/moon icon in the navbar to switch between light and dark themes. Your preference is automatically saved.
+
+## 🔧 Key Features Explained
+
+### State Management
+- **Redux Toolkit** for centralized state management
+- **Persistent Storage** using localStorage
+- **Type Safety** with TypeScript throughout
+
+### Responsive Design
+- **Mobile-first** approach
+- **Masonry Grid** layout for optimal space usage
+- **Adaptive UI** components that work on all screen sizes
+
+### Performance
+- **Code Splitting** with React.lazy() for route-based splitting
+- **Optimized Bundles** through Vite's build optimization
+- **Efficient State Updates** using Redux Toolkit's Immer integration
+
+## 📊 Data Structure
+
+### User Object
+```typescript
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  role: 'admin' | 'user';
+  avatar: string;
+  bio: string;
+  followers: number;
+}
+```
+
+### Pin Object
+```typescript
+interface Pin {
+  id: string;
+  userId: number;
+  title: string;
+  description: string;
+  imageUrl: string;
+  tags: string[];
+  likes: number;
+  savedBy: number[];
+  createdAt: string;
+}
+```
+
+## 🎨 Customization
+
+### Theme Configuration
+Modify `src/index.css` to customize the color scheme:
+- CSS custom properties for light/dark themes
+- Tailwind CSS classes for component styling
+
+### Adding New Features
+1. Create new Redux slices in `src/store/slices/`
+2. Add new pages in `src/pages/`
+3. Create reusable components in `src/components/`
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- **Pinterest** for the design inspiration
+- **shadcn/ui** for the beautiful component library
+- **Framer Motion** for smooth animations
+- **Lucide** for the icon set
+
+## 📞 Support
+
+If you encounter any issues or have questions, please open an issue on GitHub or contact the development team.
+
+---
+
+Built with ❤️ using React and TypeScript
+```

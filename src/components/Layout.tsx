@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useAppSelector, useAppDispatch } from '../store/hooks';
 import { clearCurrentUser } from '../store/slices/userSlice';
-import { Search, User, Settings, LogOut } from 'lucide-react';
+import { User, Settings, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -12,6 +12,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import ThemeToggle from './ThemeToggle';
 
 interface LayoutProps {
   children: ReactNode;
@@ -27,8 +28,8 @@ const Layout = ({ children }: LayoutProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-50 to-orange-50">
-      <header className="bg-white/80 backdrop-blur-md border-b border-rose-100 sticky top-0 z-50">
+    <div className="min-h-screen bg-gradient-to-br from-rose-50 to-orange-50 dark:from-gray-900 dark:to-gray-800">
+      <header className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-rose-100 dark:border-gray-700 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center space-x-2">
@@ -49,7 +50,7 @@ const Layout = ({ children }: LayoutProps) => {
                 className={`transition-colors ${
                   location.pathname === '/' 
                     ? 'text-rose-600 font-medium' 
-                    : 'text-gray-600 hover:text-rose-600'
+                    : 'text-gray-600 hover:text-rose-600 dark:text-gray-300 dark:hover:text-rose-400'
                 }`}
               >
                 Home
@@ -60,7 +61,7 @@ const Layout = ({ children }: LayoutProps) => {
                   className={`transition-colors ${
                     location.pathname === '/admin' 
                       ? 'text-rose-600 font-medium' 
-                      : 'text-gray-600 hover:text-rose-600'
+                      : 'text-gray-600 hover:text-rose-600 dark:text-gray-300 dark:hover:text-rose-400'
                   }`}
                 >
                   Admin
@@ -69,6 +70,7 @@ const Layout = ({ children }: LayoutProps) => {
             </nav>
 
             <div className="flex items-center space-x-4">
+              <ThemeToggle />
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className="flex items-center space-x-2">
@@ -77,25 +79,25 @@ const Layout = ({ children }: LayoutProps) => {
                       alt={currentUser?.name}
                       className="w-8 h-8 rounded-full object-cover"
                     />
-                    <span className="hidden md:block">{currentUser?.name}</span>
+                    <span className="hidden md:block dark:text-gray-200">{currentUser?.name}</span>
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-56 bg-white border border-rose-100">
+                <DropdownMenuContent align="end" className="w-56 bg-white dark:bg-gray-800 border border-rose-100 dark:border-gray-700">
                   <DropdownMenuItem asChild>
-                    <Link to={`/profile/${currentUser?.id}`} className="flex items-center">
+                    <Link to={`/profile/${currentUser?.id}`} className="flex items-center dark:text-gray-200 dark:hover:bg-gray-700">
                       <User className="mr-2 h-4 w-4" />
                       Profile
                     </Link>
                   </DropdownMenuItem>
                   {currentUser?.role === 'admin' && (
                     <DropdownMenuItem asChild>
-                      <Link to="/admin" className="flex items-center">
+                      <Link to="/admin" className="flex items-center dark:text-gray-200 dark:hover:bg-gray-700">
                         <Settings className="mr-2 h-4 w-4" />
                         Admin Panel
                       </Link>
                     </DropdownMenuItem>
                   )}
-                  <DropdownMenuItem onClick={handleLogout} className="flex items-center text-red-600">
+                  <DropdownMenuItem onClick={handleLogout} className="flex items-center text-red-600 dark:text-red-400 dark:hover:bg-gray-700">
                     <LogOut className="mr-2 h-4 w-4" />
                     Logout
                   </DropdownMenuItem>
