@@ -1,0 +1,89 @@
+
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Alice Johnson",
+      "email": "alice@pinboard.com",
+      "role": "admin",
+      "avatar": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+      "bio": "Interior design enthusiast. Coffee and cozy corners.",
+      "followers": 342
+    },
+    {
+      "id": 2,
+      "name": "Bob Smith",
+      "email": "bob@pinboard.com",
+      "role": "user",
+      "avatar": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png",
+      "bio": "Photographer. Capturing moments in nature.",
+      "followers": 128
+    },
+    {
+      "id": 3,
+      "name": "Clara Lee",
+      "email": "clara@pinboard.com",
+      "role": "user",
+      "avatar": "https://cdn.pixabay.com/photo/2021/04/04/20/38/woman-6151968_1280.jpg",
+      "bio": "DIY crafter and digital artist.",
+      "followers": 207
+    }
+  ],
+  "pins": [
+    {
+      "id": "p101",
+      "userId": 1,
+      "title": "Scandinavian Living Room",
+      "description": "Minimal, bright, and cozy living room inspiration.",
+      "imageUrl": "https://images.pexels.com/photos/271800/pexels-photo-271800.jpeg",
+      "tags": ["interior", "scandinavian", "living room"],
+      "likes": 87,
+      "savedBy": [2, 3],
+      "createdAt": "2025-05-01T10:15:00Z"
+    },
+    {
+      "id": "p102",
+      "userId": 1,
+      "title": "Desert Landscape",
+      "description": "Sunset in the dunes with warm earthy tones.",
+      "imageUrl": "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg",
+      "tags": ["nature", "desert", "travel"],
+      "likes": 143,
+      "savedBy": [2],
+      "createdAt": "2025-05-05T16:40:00Z"
+    },
+    {
+      "id": "p103",
+      "userId": 2,
+      "title": "Mountain Cabin Retreat",
+      "description": "A quiet escape in the snow-covered woods.",
+      "imageUrl": "https://images.pexels.com/photos/314937/pexels-photo-314937.jpeg",
+      "tags": ["cabin", "snow", "travel", "architecture"],
+      "likes": 95,
+      "savedBy": [1, 3],
+      "createdAt": "2025-05-10T08:25:00Z"
+    },
+    {
+      "id": "p104",
+      "userId": 3,
+      "title": "Colorful Abstract Painting",
+      "description": "Bold brush strokes and vibrant palette.",
+      "imageUrl": "https://images.pexels.com/photos/1819644/pexels-photo-1819644.jpeg",
+      "tags": ["art", "painting", "abstract"],
+      "likes": 62,
+      "savedBy": [1],
+      "createdAt": "2025-05-12T14:10:00Z"
+    },
+    {
+      "id": "p105",
+      "userId": 3,
+      "title": "DIY Macramé Wall Hanging",
+      "description": "Perfect weekend craft project for your home.",
+      "imageUrl": "https://images.pexels.com/photos/6207924/pexels-photo-6207924.jpeg",
+      "tags": ["DIY", "macrame", "home decor"],
+      "likes": 34,
+      "savedBy": [],
+      "createdAt": "2025-05-14T19:50:00Z"
+    }
+  ]
+}
