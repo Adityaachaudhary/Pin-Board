@@ -29,7 +29,7 @@ function AppContent() {
     if (storedUsers) {
       dispatch(setUsers(JSON.parse(storedUsers)));
     } else {
-      dispatch(setUsers(initialData.users));
+      dispatch(setUsers(initialData.users as any));
       localStorage.setItem('users', JSON.stringify(initialData.users));
     }
 
